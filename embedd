@@ -1,8 +1,0 @@
-git clone https://github.com/sebastianvillaf/aerospace-cubesat-mission.git
-cd aerospace-cubesat-mission
-
-mkdir -p embedded/lolin_main
-
-touch embedded/lolin_main/lolin_main.ino
-touch embedded/lolin_main/cubesat_states.h
-touch embedded/lolin_main/cubesat_states.cpp
