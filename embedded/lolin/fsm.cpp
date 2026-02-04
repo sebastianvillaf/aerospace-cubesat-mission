@@ -67,10 +67,10 @@ void FSM::update(float altitude_m, unsigned long time_since_boot_ms, bool gps_va
             if (altitudeChange < DESCENT_THRESHOLD) {
                 Serial.print("[FSM] Descent detected! Rate: ");
                 Serial.print(altitudeChange, 2);
-                Serial.println(" m/s");
+                Serial.println("m/s");
                 transitionTo(MissionState::DESCENT_FREE);
             }
-
+            break;
         case MissionState::DESCENT_FREE:
             //Transition when parachute deploys (altitude drops below threshold)
             if (altitude_m < PARACHUTE_DEPLOY_ALT) {
@@ -192,7 +192,7 @@ void FSM::confirmImageCaptured() {
 //Transition to new state
 void FSM::transitionTo(MissionState newState) {
     if (newState == currentState) {
-        return;  // No transition needed
+        return;  //No transition needed
     }
     
     //Exit current state
@@ -274,4 +274,5 @@ void FSM::onStateExit() {
         default:
             break;
     }
+
 }
