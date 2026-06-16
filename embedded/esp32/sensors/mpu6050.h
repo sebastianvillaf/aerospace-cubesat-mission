@@ -10,8 +10,9 @@ class MPU6050_Driver {
 public:
     MPU6050_Driver();
     
-    bool begin(uint8_t address = 0x68);
-    
+    bool begin(uint8_t address = 0x68,
+               mpu6050_range_t accelRange = MPU6050_RANGE_8_G,
+               mpu6050_bandwidth_t bandwidth = MPU6050_BAND_21_HZ);
     
     //Read all sensor axis x y and z acceleration (m/s²)
     bool read(float& accel_x, float& accel_y, float& accel_z,

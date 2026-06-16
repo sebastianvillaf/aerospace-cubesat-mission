@@ -1,4 +1,4 @@
-#include "bmp280_driver.h"
+#include "bmp280.h"
 
 BMP280_Driver::BMP280_Driver() : initialized(false) {
 }
